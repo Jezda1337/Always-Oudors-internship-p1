@@ -1,0 +1,139 @@
+$desktop: 1024px;
+
+header {
+    @media screen and (min-width: $desktop) {
+        width: 100%;
+
+        .navMenu {
+            display: flex;
+
+            .navList {
+                @include flexRowCenter;
+
+                li {
+                    margin: 0 1.5rem 0 0;
+
+                    a {
+                        color: $whiteColor;
+                        border-bottom: 2px solid transparent;
+                        transition: .3s linear;
+
+                        &:hover {
+                            border-bottom: 2px solid $whiteColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        .search {
+            @include flexRowCenter;
+
+            svg {
+                width: 22px;
+                height: 22px;
+                cursor: pointer;
+            }
+
+            a {
+                color: $whiteColor;
+                margin: 0 0 0 1rem;
+                border-bottom: 2px solid transparent;
+                transition: .3s linear;
+
+                &:hover {
+                    border-bottom: 2px solid $whiteColor;
+                }
+            }
+        }
+    }
+}
+
+
+.heroSection {
+    @media screen and (min-width: 1024px) {
+        padding: 6rem 4rem;
+
+        h1 {
+            font-size: 40px;
+
+        }
+
+
+        .frontContent {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            .textOne {
+                grid-column: 1 / 3;
+                margin: 4rem 2rem 0 0;
+            }
+
+            .textTwo {
+                grid-column: 1 / 3;
+                margin: 0 2rem 0 0;
+            }
+
+            figure {
+                width: 100%;
+                height: auto;
+                grid-column: 3 / 5;
+                grid-row: 1 / 3;
+
+            }
+
+        }
+
+    }
+
+}
+
+.sectionTwo {
+    @media screen and (min-width: $desktop) {
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 1rem;
+            color: $whiteColor;
+        }
+
+        .cardSection {
+            @include flexRowCenter;
+            margin: 0 0 5rem 0;
+            padding: 2rem 0 5rem 0;
+
+            .card {
+                margin: 2rem 1rem 2rem 1rem;
+            }
+        }
+    }
+}
+
+.sectionThree {
+    @media screen and (min-width: $desktop) {
+        h2 {
+            font-size: 30px;
+        }
+
+        .popularTours {
+            @include flexRowCenter;
+
+            .popularCard {
+                margin: 0 2rem;
+            }
+        }
+    }
+}
+
+.footerNavigation {
+    @media screen and (min-width: $desktop) {
+        .footerNav {
+            @include flexRowCenter;
+
+            li {
+                margin: 0 2rem 0 0;
+            }
+        }
+    }
+}

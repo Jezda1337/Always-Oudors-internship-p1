@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+$primaryColor: #1F5D6A;
+$whiteColor: #fff;
+$textColor: #666;
+$bgBody: #f6f6f6;
+$footerBg: #1B373B;
+
+@mixin flexRowCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexColumnCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: $bgBody;
+}
+
+// MOBILE-FIRST
+header {
+    @include flexRowCenter;
+    justify-content: space-between;
+    background-color: $primaryColor;
+    width: 100vw;
+    padding: 1rem;
+    position: fixed;
+    z-index: 99;
+    box-shadow: 0 1px 10px #000;
+
+    .logo {
+        @include flexRowCenter;
+        cursor: pointer;
+
+        p {
+            margin-left: 1rem;
+            color: $whiteColor;
+        }
+    }
+
+    .navMenu,
+    .search {
+        display: none;
+    }
+}
+
+.heroSection {
+    margin: 0 0 5rem 0;
+    padding-top: 5rem;
+
+    h1 {
+        text-align: center;
+        color: $primaryColor;
+        font-size: 25px;
+        margin: 2rem 0;
+    }
+
+    .frontContent {
+        .textOne {
+            h3 {
+                margin-bottom: 2rem;
+                color: $primaryColor;
+            }
+
+            p {
+                margin: 0 0 2rem 0;
+            }
+        }
+
+        .textTwo {
+            h3 {
+                margin: 0 0 2rem 0;
+                color: $primaryColor;
+            }
+
+            p {
+                margin: 0 0 2rem 0;
+            }
+        }
+    }
+
+    figure {
+        margin: 2rem 0;
+
+        img {
+            width: 100%;
+        }
+    }
+
+
+}
+
+
+.sectionTwo {
+    padding: 4rem 1rem;
+    margin: 3rem 0;
+    @include flexColumnCenter;
+    background: linear-gradient(160deg, rgba(253, 253, 253, 0.6), rgba(23, 201, 228, 0.8)), url('./images/img-bg-adventure.jpg') center center / cover no-repeat;
+
+
+
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100px;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform-origin: left top;
+        background-color: #fff;
+        transform: skewY(-3deg);
+        background: $bgBody;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: $bgBody;
+        transform-origin: top right;
+        background-attachment: fixed;
+        transform: skewY(-3deg);
+    }
+
+    h2 {
+        text-align: center;
+        color: $primaryColor;
+        margin: 4rem 0 3rem 0;
+    }
+
+    .cardSection {
+        padding: 2rem 0 5rem 0;
+        width: 100%;
+        @include flexColumnCenter;
+
+        .card {
+            @include flexColumnCenter;
+            background: $whiteColor;
+            margin: 0 0 2rem 0;
+            padding: 2rem;
+            max-width: 300px;
+
+            p {
+                text-align: center;
+                color: $textColor;
+            }
+
+            svg {
+                fill: $primaryColor;
+                margin: 1rem 0 .5rem 0;
+                width: 42px;
+                height: 42px;
+            }
+
+            h3 {
+                color: $primaryColor;
+                margin: 1rem 0;
+            }
+        }
+    }
+}
+
+
+
+
+.sectionThree {
+    @include flexColumnCenter;
+    width: 100%;
+
+    h2 {
+        text-align: center;
+        margin: 2rem 0 4rem 0;
+        color: $primaryColor;
+    }
+
+    .popularTours {
+        @include flexColumnCenter;
+        justify-content: space-around;
+        width: 100%;
+
+        .popularCard {
+            @include flexColumnCenter;
+            width: 100%;
+            background-color: $whiteColor;
+            color: $primaryColor;
+            max-width: 300px;
+
+            div {
+                width: 100%;
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: 30px;
+                    left: 0;
+                    bottom: .1rem;
+                    right: 0;
+                    transform-origin: right top;
+                    transform: skewY(-3deg);
+                    background-color: $whiteColor;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+
+
+            h3 {
+                margin: 1rem 0 1rem 0;
+            }
+
+            .popularList {
+                margin: 0 0 2rem 0;
+                width: 100%;
+                text-align: center;
+                padding: 0 3rem;
+
+                li {
+                    padding: .5rem 0;
+                    border-bottom: 2px solid #777;
+                }
+            }
+        }
+
+        .popularCard:nth-child(2) {
+            color: $whiteColor;
+            background-color: $primaryColor;
+
+            div {
+                &::after {
+                    background-color: $primaryColor;
+                }
+            }
+        }
+    }
+
+    .btn {
+        text-align: center;
+        padding: 1rem;
+        border-radius: 100px;
+        border: none;
+        outline: none;
+        margin: 3rem 0 5rem 0;
+        background: linear-gradient(90deg, #1e5d69 0%, #0093af 100%);
+        font-weight: bold;
+        color: $whiteColor;
+        cursor: pointer;
+
+        &:hover {
+            background: linear-gradient(-90deg, #1e5d69 0%, #0093af 100%);
+        }
+    }
+}
+
+.footerNavigation {
+    width: 100%;
+    background-color: $primaryColor;
+    padding: 3rem 0 2rem 0;
+
+    .footerNav {
+        @include flexColumnCenter;
+
+        li {
+            margin: .5rem 0;
+
+            a {
+                color: $whiteColor;
+                border-bottom: 2px solid transparent;
+                transition: .3s linear;
+
+                &:hover {
+                    border-bottom: 2px solid $whiteColor;
+                }
+            }
+        }
+    }
+
+    .socialList {
+        @include flexRowCenter;
+        margin: 2rem 0;
+
+        li {
+            margin: 0 1rem 0 0;
+            border-radius: 100px;
+            background: rgba(23, 201, 228, 0.8);
+            @include flexColumnCenter;
+            padding: .5rem;
+            cursor: pointer;
+            transition: .2s linear;
+
+            &:hover {
+                transform: scale(1.2)
+            }
+        }
+    }
+}
+
+footer {
+    @include flexRowCenter;
+    justify-content: space-between;
+    color: $whiteColor;
+    background-color: $footerBg;
+
+    padding: 1rem .3rem;
+
+    div {
+        @include flexRowCenter;
+
+        p {
+            margin: 0 0 0 .5rem;
+        }
+    }
+}
+
+
+@import './_responsive.scss';
